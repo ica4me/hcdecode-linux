@@ -9,20 +9,20 @@ pada Linux/Python 3.12. Instalasi dependensi membutuhkan akses indeks paket;
 setelah dependensi tersedia, proses decode berjalan offline.
 
 ```bash
-unzip hcdecode-linux.zip
+apt install git -y
+git clone https://github.com/ica4me/hcdecode-linux.git hcdecode-linux
 cd hcdecode-linux
+apt install python3.13-venv -y
 python3 -m venv .venv
 . .venv/bin/activate
 python -m pip install .
 hcdecode --version
 ```
 
-Output terakhir: `0.1.0`.
-
 Untuk memakai versi dependensi yang persis diuji, jalankan
 `python -m pip install -r requirements-tested.txt` sebelum `python -m pip install .`.
 
-## Contoh yang langsung bisa dicoba
+## Contoh file uji coba
 
 ```bash
 hcdecode decode examples/demo_ssh.hc -o demo_ssh.json
@@ -37,7 +37,7 @@ OK: demo_ssh.hc: 32 fields, 17 MAC valid -> demo_ssh.json
 `demo_ssh.json` berisi SSH `vpn.example.com:443` dan kredensial `[REDACTED]`.
 Semua file dalam `examples/` memakai domain contoh dan akun fiktif.
 
-## Membaca file sendiri
+## Decrypt File 
 
 ```bash
 # Default: tampilkan JSON dengan kredensial disamarkan.
@@ -46,11 +46,11 @@ hcdecode decode "konfigurasi.hc"
 # Simpan laporan; file hasil dibuat dengan izin 0600.
 hcdecode decode "konfigurasi.hc" -o hasil.json
 
-# Pulihkan seluruh isi asli secara lokal, termasuk kredensial dan HTML catatan.
-hcdecode decode "konfigurasi.hc" --show-secrets -o hasil_asli.json
+# Pulihkan seluruh isi asli secara lokal, termasuk kredensial dan HTML Note.
+hcdecode decode examples/xlaab01.hc --show-secrets -o  examples/xlaab01.full.json
 
 # Ekspor hanya JSON V2Ray asli, tanpa pembungkus laporan.
-hcdecode decode examples/demo_trojan.hc --v2ray-only --show-secrets -o v2ray.json
+hcdecode decode examples/demo_trojan.hc --v2ray-only --show-secrets -o examples/v2ray.json
 
 # Batch: proses semua file; jika satu gagal, file lain tetap diproses.
 hcdecode decode /path/config/*.hc --out-dir hasil
