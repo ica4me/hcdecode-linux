@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hcdecode-local"
+version = "0.1.0"
+description = "Offline, authenticated decoder for the observed HTTP Custom legacy a/b format"
+requires-python = ">=3.10"
+dependencies = ["pycryptodome>=3.23,<5", "cryptography>=44,<51"]
+
+[project.scripts]
+hcdecode = "hcdecode.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["hcdecode*"]

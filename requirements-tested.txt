@@ -1,0 +1,3 @@
+# Runtime versions used for the supplied validation report.
+pycryptodome==4.0.0
+cryptography==50.0.2

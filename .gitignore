@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+output/
+*.hc
+*.apk
+*.decoded.json
+!tests/fixtures/*.hc
+!examples/*.hc

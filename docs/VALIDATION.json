@@ -1,0 +1,62 @@
+{
+  "validated_date_wib": "2026-10-17",
+  "tool_version": "0.1.0",
+  "runtime": {
+    "os": "Linux",
+    "python": "3.12.14",
+    "pycryptodome": "4.0.0",
+    "cryptography": "50.0.2"
+  },
+  "package_installation_test": "wheel built and installed; installed module used for sample checks",
+  "unit_tests": {
+    "passed": 14,
+    "failed": 0,
+    "crypto_fixture_provider": "independent libsodium original ChaCha20-Poly1305"
+  },
+  "supplied_samples": [
+    {
+      "source_file": "Kap8I1LXhE.hc",
+      "sha256": "2c8998c549d38090735c445b62d168e3be8426f3ad620d5b25841975cdc82332",
+      "fields": 32,
+      "authenticated_records": 28,
+      "all_plaintext_fields_equal_previous_verified_decode": true,
+      "redaction_check_passed": true
+    },
+    {
+      "source_file": "TELKOMSEL_ILPED_CLOUDFRONT_EXP_7_HARI_23_OKTOBER_SFILE_MOBI.hc",
+      "sha256": "0d495efba8497ec5b772f3005f05e15151e0adc32297bd94e8cdadf8d69ef808",
+      "fields": 32,
+      "authenticated_records": 28,
+      "all_plaintext_fields_equal_previous_verified_decode": true,
+      "redaction_check_passed": true
+    },
+    {
+      "source_file": "XL AXIS EDUKASI JABAR V1 NEWBIE 13 16 OKT V2137 (SFILE.MOBI).hc",
+      "sha256": "eeb54e38ed348ee73d638945fb72b462665e0fbcadfaada5409a38528e5c7adb",
+      "fields": 32,
+      "authenticated_records": 31,
+      "all_plaintext_fields_equal_previous_verified_decode": true,
+      "redaction_check_passed": true
+    },
+    {
+      "source_file": "edukasi v2ray jabar sumatra.hc",
+      "sha256": "22be960d14e7eab55123110e55f5a4915517cfbd145010369e57e1d876776b3f",
+      "fields": 32,
+      "authenticated_records": 28,
+      "all_plaintext_fields_equal_previous_verified_decode": true,
+      "redaction_check_passed": true
+    },
+    {
+      "source_file": "ilmupedia v2ray 443.hc",
+      "sha256": "ec1693673d197487f8ceb5ca1cef7152b33538ce5ce753a9993fc2cc88676786",
+      "fields": 32,
+      "authenticated_records": 28,
+      "all_plaintext_fields_equal_previous_verified_decode": true,
+      "redaction_check_passed": true
+    }
+  ],
+  "total_authenticated_records": 143,
+  "secrets_included_in_package": false,
+  "live_android_sniff_tested": false,
+  "server_connection_tested": false
+}
