@@ -131,8 +131,9 @@ atau tests: fixture sudah disertakan.
   kontak `wa.me`, dan HTML catatan. Format atau lokasi rahasia baru memerlukan
   pembaruan aturan; jangan menganggap ini anonimisasi universal.
 
-
+---
 ## Install UI (Opsional)
+
 <img width="960" height="540" alt="UI-HCdecoder" src="https://github.com/user-attachments/assets/1cd7b5b0-a098-43e5-8313-ba5711a65b67" />
 
 ```bash
@@ -157,8 +158,7 @@ HC_BACKEND_PATH=/root/hc-decoder/hcdecode-linux
 WEB_BIND=0.0.0.0
 WEB_PORT=8080
 ```
-Akses UI http://<ip-server>:8080
----
+Akses UI http://ip-server:8080
 
 ## Download HTTP Custom versi lama (Android)
 ```bash
