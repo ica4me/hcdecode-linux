@@ -138,13 +138,13 @@ atau tests: fixture sudah disertakan.
 
 ```bash
 # Install Docker
-apt install wget -y
+apt install wget curl unzip -y
 curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh
 
 # Download UI
 cd /root/hc-decoder
 wget https://github.com/ica4me/hcdecode-linux/releases/download/ui/hcdecode-web.zip
-unzip hcdecode-web.zip
+unzip hcdecode-web.zip -d hcdecode-web
 cd hcdecode-web
 
 cp .env.example .env
