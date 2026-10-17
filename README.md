@@ -9,7 +9,10 @@ pada Linux/Python 3.12. Instalasi dependensi membutuhkan akses indeks paket;
 setelah dependensi tersedia, proses decode berjalan offline.
 
 ```bash
+apt-get update
 apt install git -y
+mkdir -p /root/hc-decoder
+cd /root/hc-decoder
 git clone https://github.com/ica4me/hcdecode-linux.git hcdecode-linux
 cd hcdecode-linux
 apt install python3.13-venv -y
@@ -127,3 +130,37 @@ atau tests: fixture sudah disertakan.
 - Default redaction mencakup field kredensial yang dikenali, salinannya, nomor
   kontak `wa.me`, dan HTML catatan. Format atau lokasi rahasia baru memerlukan
   pembaruan aturan; jangan menganggap ini anonimisasi universal.
+
+
+## Install UI (Opsional)
+<img width="960" height="540" alt="UI-HCdecoder" src="https://github.com/user-attachments/assets/1cd7b5b0-a098-43e5-8313-ba5711a65b67" />
+
+```bash
+# Install Docker
+apt install wget -y
+curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh
+
+# Download UI
+cd /root/hc-decoder
+wget https://github.com/ica4me/hcdecode-linux/releases/download/ui/hcdecode-web.zip
+unzip hcdecode-web.zip
+cd hcdecode-web
+
+cp .env.example .env
+docker compose config --quiet
+docker compose up -d --build
+docker compose ps
+```
+Konfigurasi .env arahkan ke lokasi backend:
+```bash
+HC_BACKEND_PATH=/root/hc-decoder/hcdecode-linux
+WEB_BIND=0.0.0.0
+WEB_PORT=8080
+```
+Akses UI http://<ip-server>:8080
+---
+
+## Download HTTP Custom versi lama (Android)
+```bash
+wget https://github.com/ica4me/hcdecode-linux/releases/download/apk/HTTP.Custom-version.4.11.25.build.645.apk
+```
